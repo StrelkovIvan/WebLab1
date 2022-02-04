@@ -5,8 +5,9 @@ web:
   volumes:
     - ./code:/code
     - ./site.conf:/etc/nginx/conf.d/site.conf
-    - ./code:/code
   links:
-    -php
+    - php
 php:
-    image: php:7-fpm
+  image: php:7-fpm
+  volumes:
+  - ./code:/code
